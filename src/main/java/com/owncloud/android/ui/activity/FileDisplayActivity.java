@@ -62,6 +62,7 @@ import com.nextcloud.client.appinfo.AppInfo;
 import com.nextcloud.client.di.Injectable;
 import com.nextcloud.client.preferences.AppPreferences;
 import com.nextcloud.client.preferences.AppPreferencesImpl;
+import com.owncloud.android.BuildConfig;
 import com.owncloud.android.MainApp;
 import com.owncloud.android.R;
 import com.owncloud.android.datamodel.ArbitraryDataProvider;
@@ -362,7 +363,7 @@ public class FileDisplayActivity extends FileActivity
             int lastSeenVersion = arbitraryDataProvider.getIntegerValue(account,
                                                                         AppPreferencesImpl.AUTO_PREF__LAST_SEEN_VERSION_CODE);
 
-            if (appInfo.getVersionCode() > lastSeenVersion) {
+            if (BuildConfig.VERSION_CODE > lastSeenVersion) {
                 OwnCloudVersion serverVersion = AccountUtils.getServerVersionForAccount(account, this);
 
                 if (serverVersion == null) {

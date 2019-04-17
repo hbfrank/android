@@ -44,6 +44,7 @@ import com.nextcloud.client.appinfo.AppInfo;
 import com.nextcloud.client.di.Injectable;
 import com.nextcloud.client.preferences.AppPreferences;
 import com.nextcloud.client.whatsnew.WhatsNewService;
+import com.owncloud.android.BuildConfig;
 import com.owncloud.android.MainApp;
 import com.owncloud.android.R;
 import com.owncloud.android.authentication.AccountUtils;
@@ -179,7 +180,7 @@ public class FirstRunActivity extends BaseActivity implements ViewPager.OnPageCh
     }
 
     private void onFinish() {
-        preferences.setLastSeenVersionCode(appInfo.getVersionCode());
+        preferences.setLastSeenVersionCode(BuildConfig.VERSION_CODE);
     }
 
     @Override

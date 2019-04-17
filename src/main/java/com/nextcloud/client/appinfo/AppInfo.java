@@ -28,35 +28,10 @@ package com.nextcloud.client.appinfo;
 public interface AppInfo {
 
     /**
-     * Get application version code.
-     *
-     * TODO: check validity of this assumption:
-     * Non gradle build systems do not provide {@link com.owncloud.android.BuildConfig#VERSION_CODE}
-     * so we must fallback to this method :(
-     *
-     * @return Version code as defined in AndroidManifest.xml
-     */
-    int getVersionCode();
-
-    /**
      * Get application version code as formatted string.
-     *
-     * TODO: check validity of this assumption:
-     * Non gradle build systems do not provide {@link com.owncloud.android.BuildConfig#VERSION_CODE}
-     * so we must fallback to this method :(
      *
      * @return Formatted version code as defined in AndroidManifest.xml
      */
     String getFormattedVersionCode();
 
-    /**
-     * Get application version name.
-     *
-     * TODO: check validity of this assumption:
-     * Non gradle build systems do not provide {@link com.owncloud.android.BuildConfig#VERSION_NAME}
-     * so we must fallback to this method :(
-     *
-     * @return Version code as defined in AndroidManifest.xml
-     */
-    String getVersionName();
 }

@@ -19,43 +19,15 @@
  */
 package com.nextcloud.client.appinfo;
 
-import android.content.Context;
-import android.content.pm.PackageManager;
+import com.owncloud.android.BuildConfig;
 
 class AppInfoImpl implements AppInfo {
 
-    private Context context;
-
-    AppInfoImpl(Context context) {
-        this.context = context;
-    }
-
-    // Non gradle build systems do not provide BuildConfig.VERSION_CODE
-    // so we must fallback to this method :(
-    @Override
-    public int getVersionCode() {
-        try {
-            String thisPackageName = context.getPackageName();
-            return context.getPackageManager().getPackageInfo(thisPackageName, 0).versionCode;
-        } catch (PackageManager.NameNotFoundException e) {
-            return 0;
-        }
+    AppInfoImpl() {
     }
 
     @Override
     public String getFormattedVersionCode() {
-        return Integer.toString(getVersionCode());
-    }
-
-    // Non gradle build systems do not provide BuildConfig.VERSION_CODE
-    // so we must fallback to this method :(
-    @Override
-    public String getVersionName() {
-        try {
-            String thisPackageName = context.getPackageName();
-            return context.getPackageManager().getPackageInfo(thisPackageName, 0).versionName;
-        } catch (PackageManager.NameNotFoundException e) {
-            return "";
-        }
+        return Integer.toString(BuildConfig.VERSION_CODE);
     }
 }

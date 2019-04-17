@@ -19,15 +19,13 @@
  */
 package com.nextcloud.client.appinfo;
 
-import android.content.Context;
-
 import dagger.Module;
 import dagger.Provides;
 
 @Module
 public class AppInfoModule {
     @Provides
-    AppInfo appInfo(Context context) {
-        return new AppInfoImpl(context);
+    AppInfo appInfo() {
+        return new AppInfoImpl();
     }
 }

@@ -2,9 +2,11 @@
  * Nextcloud Android client application
  *
  * @author Bartosz Przybylski
+ * @author Chris Narkiewicz
  * Copyright (C) 2015 Bartosz Przybylski
  * Copyright (C) 2015 ownCloud Inc.
  * Copyright (C) 2016 Nextcloud.
+ * Copyright (C) 2019 Chris Narkiewicz <hello@ezaquarii.com>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -19,7 +21,6 @@
  * You should have received a copy of the GNU Affero General Public
  * License along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 package com.nextcloud.client.whatsnew;
 
 import android.os.Build;
@@ -32,6 +33,7 @@ import android.widget.TextView;
 import com.nextcloud.client.appinfo.AppInfo;
 import com.nextcloud.client.di.Injectable;
 import com.nextcloud.client.preferences.AppPreferences;
+import com.owncloud.android.BuildConfig;
 import com.owncloud.android.R;
 import com.owncloud.android.ui.adapter.FeaturesViewAdapter;
 import com.owncloud.android.ui.adapter.FeaturesWebViewAdapter;
@@ -115,7 +117,7 @@ public class WhatsNewActivity extends FragmentActivity implements ViewPager.OnPa
         if (showWebView) {
             tv.setText(R.string.app_name);
         } else {
-            tv.setText(String.format(getString(R.string.whats_new_title), appInfo.getVersionName()));
+            tv.setText(String.format(getString(R.string.whats_new_title), appInfo.getFormattedVersionCode()));
         }
 
         updateNextButtonIfNeeded();
@@ -138,7 +140,7 @@ public class WhatsNewActivity extends FragmentActivity implements ViewPager.OnPa
     }
 
     private void onFinish() {
-        preferences.setLastSeenVersionCode(appInfo.getVersionCode());
+        preferences.setLastSeenVersionCode(BuildConfig.VERSION_CODE);
     }
 
     @Override
