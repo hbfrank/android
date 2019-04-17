@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 435
-=======
-433
->>>>>>> Drone: update FindBugs results to reflect reduced error/warning count [skip ci]

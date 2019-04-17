@@ -24,7 +24,6 @@ import android.content.Intent;
 import android.content.res.Resources;
 
 import com.nextcloud.client.account.CurrentAccountProvider;
-import com.nextcloud.client.appinfo.AppInfo;
 import com.nextcloud.client.preferences.AppPreferences;
 import com.owncloud.android.BuildConfig;
 import com.owncloud.android.R;

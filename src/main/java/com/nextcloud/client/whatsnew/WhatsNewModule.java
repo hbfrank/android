@@ -21,7 +21,6 @@ package com.nextcloud.client.whatsnew;
 import android.content.res.Resources;
 
 import com.nextcloud.client.account.CurrentAccountProvider;
-import com.nextcloud.client.appinfo.AppInfo;
 import com.nextcloud.client.preferences.AppPreferences;
 
 import javax.inject.Singleton;

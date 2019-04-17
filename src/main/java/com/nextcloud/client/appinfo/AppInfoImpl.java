@@ -23,9 +23,6 @@ import com.owncloud.android.BuildConfig;
 
 class AppInfoImpl implements AppInfo {
 
-    AppInfoImpl() {
-    }
-
     @Override
     public String getFormattedVersionCode() {
         return Integer.toString(BuildConfig.VERSION_CODE);
