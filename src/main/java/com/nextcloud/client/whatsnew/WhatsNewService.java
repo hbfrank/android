@@ -56,15 +56,11 @@ public class WhatsNewService {
     }
 
     FeatureItem[] getWhatsNew() {
-        int itemVersionCode = 30030099;
+        int itemVersionCode = 99999999;
 
         if (!isFirstRun() && BuildConfig.VERSION_CODE >= itemVersionCode
             && preferences.getLastSeenVersionCode() < itemVersionCode) {
-            return new FeatureItem[]{new FeatureItem(R.drawable.whats_new_device_credentials,
-                                                     R.string.whats_new_device_credentials_title,
-                                                     R.string.whats_new_device_credentials_content,
-                                                     false,
-                                                     false)};
+            return new FeatureItem[0];
         } else {
             return new FeatureItem[0];
         }
